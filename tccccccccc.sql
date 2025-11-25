@@ -100,14 +100,14 @@ CREATE TABLE `endereco` (
 -- Despejando dados para a tabela `endereco`
 --
 
-INSERT INTO `endereco` (`EnderecoID`, `estadoEndereco`, `cidadeEndereco`, `bairroEndereco`, `ruaEndereco`, `numeroEndereco`, `complementoEndereco`, `loginClienteFK`) VALUES
-(1, 'SP', 'Caçapava', 'Jardim Primavera', 'General Pedro Luís Pinto Bitencourt', 255, 'Casa', 0),
-(2, 'RJ', 'Rio de Janeiro', 'Copacabana', 'Avenida Atlãntica', 171, 'Casa', 0),
-(14, 'SP', 'Campinas', 'Jardim Brasil', 'Rua das Flores', 68, 'Casa', 0),
-(15, 'wd', 'wadd', 'awd', 'wadd', 333, 'caw', 23),
-(16, 'wd', 'wadd', 'awd', 'wadd', 333, 'caw', 23),
-(17, 'dw', 'wdad', 'wada', 'wdaawd', 12, 'wdadaw', 24),
-(18, 'dw', 'cszczsc', 'zscszczsc', 'zscszc', 213, 'wadaw', 25);
+INSERT INTO `endereco` (`EnderecoID`, `estadoEndereco`, `cidadeEndereco`, `bairroEndereco`, `ruaEndereco`, `numeroEndereco`, `complementoEndereco`) VALUES
+(1, 'SP', 'Caçapava', 'Jardim Primavera', 'General Pedro Luís Pinto Bitencourt', 255, 'Casa'),
+(2, 'RJ', 'Rio de Janeiro', 'Copacabana', 'Avenida Atlãntica', 171, 'Casa'),
+(14, 'SP', 'Campinas', 'Jardim Brasil', 'Rua das Flores', 68, 'Casa'),
+(15, 'wd', 'wadd', 'awd', 'wadd', 333, 'caw'),
+(16, 'wd', 'wadd', 'awd', 'wadd', 333, 'caw'),
+(17, 'dw', 'wdad', 'wada', 'wdaawd', 12, 'wdadaw'),
+(18, 'dw', 'cszczsc', 'zscszczsc', 'zscszc', 213, 'wadaw');
 
 -- --------------------------------------------------------
 
