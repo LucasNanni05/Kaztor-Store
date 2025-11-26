@@ -24,7 +24,7 @@ include "conexao.php";
           <h3 class="fs-2 text-body-emphasis m-0">KAZTOR</h3>
           <p class="m-0 small text-muted">A loja do Futuro</p> 
         </div>
-        <a href="#" style="text-decoration: none; color: inherit">
+        <a href="/TCCphpJoca/carrinho.php" style="text-decoration: none; color: inherit">
           <div class="botaocompra d-flex align-items-center gap-2 border rounded p-2 mt-2">
             Comprar
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -39,7 +39,7 @@ include "conexao.php";
 <div class="flex-grow-1">
     <h2 class="mb-4 fw-bold" style="font-family: serif;">NOSSOS PRODUTOS</h2>
 
-    <form action="index.php" method="GET" class="mb-4 p-3 rounded" style="background-color: #c3bfbf;">
+    <form action="/TCCphpJoca/PHP/listaProdutos.php" method="GET" class="mb-4 p-3 rounded" style="background-color: #c3bfbf;">
         <div class="row g-3 align-items-center">
             <div class="col-md-8">
                 <label for="categoria" class="form-label fw-bold">Filtrar por Categoria</label>
