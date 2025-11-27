@@ -5,7 +5,7 @@ if(!isset($_SESSION)) {
 }
 
 if(!isset($_SESSION['LoginClienteID'])){
-    header("Location: perfilLogin.php");
+    header("Location: /TCCphpJoca/perfilLogin.php");
     exit;
 }
 
