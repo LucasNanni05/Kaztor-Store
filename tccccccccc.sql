@@ -77,7 +77,7 @@ CREATE TABLE `endereco` (
 --
 
 INSERT INTO `endereco` (`EnderecoID`, `estadoEndereco`, `cidadeEndereco`, `bairroEndereco`, `ruaEndereco`, `numeroEndereco`, `complementoEndereco`) VALUES
-(1, 'SP', 'Caçapava', 'Jardim Primavera', 'General Pedro Luís Pinto Bitencourt', 255, 'Casa'),
+(1, 'SP', 'Caçapava', 'Jardim Primavera', 'General Pedro Luís Pinto Bitencourt', 255, 'Casa');
 
 --
 -- Estrutura para tabela `itempedido`
@@ -111,7 +111,7 @@ CREATE TABLE `logincliente` (
 --
 
 INSERT INTO `logincliente` (`LoginClienteID`, `CPFCliente`, `nomeCliente`, `emailCliente`, `senhaCliente`, `tipoID`, `dataNascimentoCliente`, `telefoneCliente`, `enderecoID`) VALUES
-(1,'88888888888', 'Admin', 'admin@123', 'admin', 2,'2008-08-08','88888888888',8), 
+(1,'88888888888', 'Admin', 'admin@123', 'admin', 2,'2008-08-08','88888888888',8);
 
 -- --------------------------------------------------------
 
