@@ -1,15 +1,23 @@
 <?php
 include "conexao.php";
-include "Login.php";
 
-$iduser = $_SESSION['LoginClienteID'];
+// ensure session is started and user is logged in
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (!isset($_SESSION['LoginClienteID']) || empty($_SESSION['LoginClienteID'])) {
+    // not logged: redirect to login page
+    header("Location: /TCCphpJoca/perfilLogin.php");
+    exit;
+}
+$iduser = intval($_SESSION['LoginClienteID']);
 
 if (!isset($_GET['id']) || !isset($_GET['tamanhoID'])) {
     die("Parâmetros inválidos.");
 }
 
-$produtoID = intval($_GET['id']);
-$tamanhoID = intval($_GET['tamanhoID']);
+$produtoID = isset($_GET['id']) ? intval($_GET['id']) : 0;
+$tamanhoID = isset($_GET['tamanhoID']) ? intval($_GET['tamanhoID']) : 0;
 
 $sqlVerifica = "SELECT t.tamanho, q.quantidade 
                 FROM tamanho t
@@ -46,7 +54,7 @@ if ($resCarrinho && mysqli_num_rows($resCarrinho) > 0) {
     mysqli_query($conn, $sqlUpdateCarrinho);
 
 } else {
-    $sqlInsertCarrinho = "INSERT INTO carrinho (LoginClienteID, ProdutoID, tamanhoId, quantidadeCarrinho)
+    $sqlInsertCarrinho = "INSERT INTO carrinho (LoginClienteID, ProdutoID, tamanhoID, quantidadeCarrinho)
                           VALUES ($iduser, $produtoID, $tamanhoID, 1)";
     mysqli_query($conn, $sqlInsertCarrinho);
 }
