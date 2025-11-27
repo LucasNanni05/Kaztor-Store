@@ -1,8 +1,20 @@
 <?php
-session_start();
+// start the session early so we can check authentication before any output
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Protect page: if user is not logged in, redirect to login page immediately
+if (!isset($_SESSION['LoginClienteID']) || empty($_SESSION['LoginClienteID'])) {
+    header("Location: /TCCphpJoca/perfilLogin.php");
+    exit;
+}
+
 include "PHP/conexao.php";
-include "PHP/Login.php";
-include "PHP/protect.php";
+// include Login handler and protect afterwards (Login.php is used for form POST handling)
+// Login.php only needed on POST login forms, not required here. Remove to avoid accidental output.
+// include "PHP/Login.php";
+include "PHP/protect.php"; // keep for consistency with other pages
 
 $idUser = $_SESSION['LoginClienteID'];
 
@@ -32,7 +44,7 @@ if (
     exit;
 }
 
-$sql = "SELECT p.*, c.* , t.*
+$sql = "SELECT p., c. , t.*
         FROM carrinho c
         INNER JOIN produto p ON c.produtoID = p.ProdutoID
         INNER JOIN tamanho t ON c.tamanhoID = t.tamanhoID
