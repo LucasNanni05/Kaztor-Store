@@ -35,30 +35,6 @@ CREATE TABLE `carrinho` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `carrinho`
---
-
-INSERT INTO `carrinho` (`loginclienteID`, `produtoID`, `quantidadeCarrinho`, `tamanhoID`) VALUES
-(11, 8, 0, 0),
-(11, 8, 0, 0),
-(11, 8, 0, 0),
-(11, 8, 0, 0),
-(11, 9, 0, 0),
-(22, 11, 1, 2),
-(24, 10, 1, 1),
-(24, 11, 1, 3),
-(11, 8, 0, 0),
-(11, 8, 0, 0),
-(11, 8, 0, 0),
-(11, 8, 0, 0),
-(11, 9, 0, 0),
-(22, 11, 1, 2),
-(24, 10, 1, 1),
-(24, 11, 1, 3);
-
--- --------------------------------------------------------
-
---
 -- Estrutura para tabela `categoria`
 --
 
@@ -102,14 +78,6 @@ CREATE TABLE `endereco` (
 
 INSERT INTO `endereco` (`EnderecoID`, `estadoEndereco`, `cidadeEndereco`, `bairroEndereco`, `ruaEndereco`, `numeroEndereco`, `complementoEndereco`) VALUES
 (1, 'SP', 'Caçapava', 'Jardim Primavera', 'General Pedro Luís Pinto Bitencourt', 255, 'Casa'),
-(2, 'RJ', 'Rio de Janeiro', 'Copacabana', 'Avenida Atlãntica', 171, 'Casa'),
-(14, 'SP', 'Campinas', 'Jardim Brasil', 'Rua das Flores', 68, 'Casa'),
-(15, 'wd', 'wadd', 'awd', 'wadd', 333, 'caw'),
-(16, 'wd', 'wadd', 'awd', 'wadd', 333, 'caw'),
-(17, 'dw', 'wdad', 'wada', 'wdaawd', 12, 'wdadaw'),
-(18, 'dw', 'cszczsc', 'zscszczsc', 'zscszc', 213, 'wadaw');
-
--- --------------------------------------------------------
 
 --
 -- Estrutura para tabela `itempedido`
@@ -123,29 +91,6 @@ CREATE TABLE `itempedido` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `itempedido`
---
-
-INSERT INTO `itempedido` (`idPedido`, `idProduto`, `qtdProduto`) VALUES
-(1, 11, 1),
-(1, 10, 1),
-(2, 11, 1),
-(2, 11, 1),
-(3, 11, 1),
-(3, 11, 1),
-(3, 11, 1),
-(4, 11, 1),
-(5, 10, 1),
-(5, 11, 1),
-(6, 10, 1),
-(6, 11, 1),
-(6, 11, 1),
-(7, 10, 1),
-(7, 11, 1);
-
--- --------------------------------------------------------
-
---
 -- Estrutura para tabela `logincliente`
 --
 
@@ -156,7 +101,6 @@ CREATE TABLE `logincliente` (
   `emailCliente` varchar(256) NOT NULL,
   `senhaCliente` varchar(20) NOT NULL,
   `tipoID` int(11) NOT NULL,
-  `ImagemPerfilCliente` varchar(250) DEFAULT NULL,
   `dataNascimentoCliente` date DEFAULT NULL,
   `telefoneCliente` char(11) DEFAULT NULL,
   `enderecoID` int(11) DEFAULT NULL
@@ -166,14 +110,8 @@ CREATE TABLE `logincliente` (
 -- Despejando dados para a tabela `logincliente`
 --
 
-INSERT INTO `logincliente` (`LoginClienteID`, `CPFCliente`, `nomeCliente`, `emailCliente`, `senhaCliente`, `tipoID`, `ImagemPerfilCliente`, `dataNascimentoCliente`, `telefoneCliente`, `enderecoID`) VALUES
-(11, '54406118861', 'Lucas nanni', 'lucas.abruceze.27@gmail.com', 'Lucas@2705', 2, '', '2008-05-27', '12992100211', 1),
-(19, '54406118862', 'João Gabriel', 'lucasgabriel200mtofoda@gmail.com', 'joanitogabriel200', 2, '', '2008-05-09', '12992100212', 14),
-(21, NULL, 'w', 'w', 'w', 2, NULL, NULL, NULL, NULL),
-(22, '54406118863', 'e', 'e', 'e', 1, NULL, NULL, NULL, 1),
-(23, '53674839092', 'wd', 'wda21', '12', 2, NULL, '2009-02-12', '12996735241', NULL),
-(24, '53674839094', 'wad', 'wadaw', '12', 1, NULL, '1222-02-12', '12996735241', NULL),
-(25, '53674839078', 'waadad', 'wadada', '12', 2, NULL, '2333-03-12', '12996735241', NULL);
+INSERT INTO `logincliente` (`LoginClienteID`, `CPFCliente`, `nomeCliente`, `emailCliente`, `senhaCliente`, `tipoID`, `dataNascimentoCliente`, `telefoneCliente`, `enderecoID`) VALUES
+(1,'88888888888', 'Admin', 'admin@123', 'admin', 2,'2008-08-08','88888888888',8), 
 
 -- --------------------------------------------------------
 
@@ -188,19 +126,6 @@ CREATE TABLE `pedido` (
   `statusPedido` varchar(50) NOT NULL,
   `loginclienteIDFK` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Despejando dados para a tabela `pedido`
---
-
-INSERT INTO `pedido` (`PedidoID`, `dataPedido`, `valorTotalPedido`, `statusPedido`, `loginclienteIDFK`) VALUES
-(1, '2025-11-03', 685.8, 'Pedido Recebido', 21),
-(2, '2025-11-03', 919.8, 'Pedido Recebido', 21),
-(3, '2025-11-03', 1379.7, 'Pedido Recebido', 21),
-(4, '2025-11-06', 459.9, 'Saiu para entrega', 23),
-(5, '2025-11-06', 685.8, 'Cancelado', 23),
-(6, '2025-11-06', 1145.7, 'Pedido Recebido', 23),
-(7, '2025-11-06', 685.8, 'Entregue', 25);
 
 -- --------------------------------------------------------
 
@@ -223,8 +148,6 @@ CREATE TABLE `produto` (
 --
 
 INSERT INTO `produto` (`ProdutoID`, `descricaoProduto`, `corProduto`, `precoProduto`, `quantidadeEstoqueProduto`, `ImagemProduto`, `CategoriaID`) VALUES
-(8, 'Camiseta Polo', 'preto', 149.9, 80, './img/fodase ponto png.webp', 3),
-(9, 'Tênis Militar', 'verde', 329.9, 70, './img/tenis mto foda.webp', 1),
 (10, 'Chuteira Umbro', 'azul', 225.9, 0, './img/chuteira umbro.jpg', 2),
 (11, 'Camiseta Corinthians', 'Branca', 459.9, 0, './img/corinthians.jpg', 3),
 (17, ' Tênis Nike Air Force 1 \"07', 'Branco', 759.99, 0, 'img/nike1.avif', 2),
