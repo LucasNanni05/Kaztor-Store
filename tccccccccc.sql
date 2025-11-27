@@ -68,8 +68,7 @@ CREATE TABLE `endereco` (
   `bairroEndereco` varchar(250) NOT NULL,
   `ruaEndereco` varchar(250) NOT NULL,
   `numeroEndereco` int(11) NOT NULL,
-  `complementoEndereco` varchar(250) DEFAULT NULL,
-  `loginClienteFK` int(11) NOT NULL
+  `complementoEndereco` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
