@@ -1,20 +1,15 @@
 <?php
-// start the session early so we can check authentication before any output
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Protect page: if user is not logged in, redirect to login page immediately
 if (!isset($_SESSION['LoginClienteID']) || empty($_SESSION['LoginClienteID'])) {
     header("Location: /TCCphpJoca/perfilLogin.php");
     exit;
 }
 
 include "PHP/conexao.php";
-// include Login handler and protect afterwards (Login.php is used for form POST handling)
-// Login.php only needed on POST login forms, not required here. Remove to avoid accidental output.
-// include "PHP/Login.php";
-include "PHP/protect.php"; // keep for consistency with other pages
+include "PHP/protect.php";
 
 $idUser = $_SESSION['LoginClienteID'];
 
