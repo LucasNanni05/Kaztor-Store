@@ -79,7 +79,7 @@ $pedidos_result = $stmt->get_result(); // Renomeado para evitar conflito e clare
                                         FROM pedido pe
                                         INNER JOIN itempedido ip on ip.idPedido = pe.PedidoID
                                         INNER JOIN produto p ON ip.idProduto = p.ProdutoID
-                                        INNER JOIN tamanho t ON ip.tamanhoID = t.tamanhoID
+                                        INNER JOIN tamanho t ON ip.idTamanho = t.tamanhoID
                                         WHERE ip.idPedido = ?";
                 $stmt_items = $conn->prepare($sqlselectitempedido);
                 $stmt_items->bind_param("i", $pedido['PedidoID']);
