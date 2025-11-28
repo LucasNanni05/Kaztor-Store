@@ -12,7 +12,7 @@ $sql = "SELECT * FROM pedido WHERE loginclienteIDFK = ?
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id_usuario);
 $stmt->execute();
-$pedidos_result = $stmt->get_result(); // Renomeado para evitar conflito e clareza
+$pedidos_result = $stmt->get_result();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
