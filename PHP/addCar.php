@@ -1,12 +1,10 @@
 <?php
 include "conexao.php";
 
-// ensure session is started and user is logged in
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 if (!isset($_SESSION['LoginClienteID']) || empty($_SESSION['LoginClienteID'])) {
-    // not logged: redirect to login page
     header("Location: /TCCphpJoca/perfilLogin.php");
     exit;
 }
