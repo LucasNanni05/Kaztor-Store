@@ -44,7 +44,7 @@ if (
     exit;
 }
 
-$sql = "SELECT p., c. , t.*
+$sql = "SELECT p.*, c.* , t.*
         FROM carrinho c
         INNER JOIN produto p ON c.produtoID = p.ProdutoID
         INNER JOIN tamanho t ON c.tamanhoID = t.tamanhoID
@@ -76,7 +76,7 @@ if ($conn->query($sqlPedido) === TRUE) {
         $tamanho = $item['tamanhoID'];
         $ProdutoID = $item['ProdutoID'];
         $qtdProduto = $item['quantidadeCarrinho'];
-        $insertItemPedido = "INSERT INTO itempedido (idPedido, idProduto, qtdProduto, tamanhoID) VALUES ($pedidoGerado, $ProdutoID, $qtdProduto, $tamanho)";
+        $insertItemPedido = "INSERT INTO itempedido (idPedido, idProduto, qtdProduto, idTamanho) VALUES ($pedidoGerado, $ProdutoID, $qtdProduto, $tamanho)";
         if (!mysqli_query($conn, $insertItemPedido)) {
             error_log("Erro ao inserir item do pedido: " . mysqli_error($conn));
         }
